@@ -1,0 +1,76 @@
+body {
+    background-image: url(../img/wallpaper-pagina-iphone.png);
+    background-size: cover;
+}
+
+header {
+    background-color: black;
+    text-align: center;
+    color: white;
+    padding: 0.2rem;
+}
+
+.search img {
+    margin-top: 2rem;
+}
+
+.search {
+    align-items: center;
+    background-color: rgb(67, 66, 66);
+    padding: 0.5rem;
+}
+
+#search-button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 41px;
+    margin-left: -1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    /* Añade un padding horizontal para que el botón tenga un tamaño razonable */
+}
+
+#search-button img {
+    vertical-align: middle;
+    width: 2rem;
+    margin-bottom: 23px;
+}
+
+.slide img {
+    height: 300px;
+}
+
+.slide {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.card {
+    height: 100%;
+    /* Ajustar la altura de todas las tarjetas */
+}
+
+.card-body {
+    height: 100%;
+    /* Ajustar la altura del cuerpo de la tarjeta */
+}
+
+.card-img-top {
+    object-fit: cover;
+    /* Ajustar la imagen dentro de la tarjeta */
+    height: 250px;
+    /* Establecer una altura fija para la imagen */
+    transition: transform 0.3s ease;
+    /* Agregar transición para suavizar el efecto de zoom */
+
+}
+
+
+.card-img-top:hover {
+    transform: scale(1.1);
+    /* Hacer zoom al 110% cuando el ratón pasa por encima */
+}
