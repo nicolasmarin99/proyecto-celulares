@@ -17,7 +17,7 @@ const crearTarjetas = (celularesArray) => {
     let celularRow = document.getElementById("celularRow");
 
     celularesArray.map((celular) => {
-        const { name, precio, img: imagen } = celular;
+        const { name, precio, img: imagen, descripcion, cantidad } = celular;
 
         const divRow = document.createElement("div");
         divRow.classList.add("col-xl-3");
@@ -49,11 +49,10 @@ const crearTarjetas = (celularesArray) => {
         const btnMostrar = document.createElement("button")
         btnMostrar.classList.add("btn");
         btnMostrar.classList.add("btn-danger");
-        btnMostrar.textContent = "mostrar detalles";
+        btnMostrar.textContent = "Mostrar detalles";
         btnMostrar.addEventListener("click", () => {
-            enviarDatos(name, precio, imagen, descripcion, cantidad);
+            mostrarDetalles(name);
         })
-
 
         divRow.appendChild(card);
 
@@ -64,11 +63,9 @@ const crearTarjetas = (celularesArray) => {
         divBody.appendChild(subTitulo);
         divBody.appendChild(btnMostrar);
 
-
         celularRow.appendChild(divRow);
     })
 }
-
 
 // Llamar a la función para obtener y crear las tarjetas
 obtenerCelulares()
@@ -79,5 +76,7 @@ obtenerCelulares()
         console.log(error);
     });
 
-
-
+// Función para redirigir al usuario a la página de formulario con el nombre del teléfono seleccionado
+const mostrarDetalles = (nombreTelefono) => {
+    window.location.href = `formulario.html?telefono=${encodeURIComponent(nombreTelefono)}`;
+}

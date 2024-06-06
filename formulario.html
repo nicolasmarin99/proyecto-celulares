@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Venta</title>
+</head>
+<body>
+    <h1>Formulario de Venta</h1>
+    <form action="procesar-formulario.php" method="POST" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+        <label for="telefonoVender">Teléfono a vender:</label>
+        <input type="text" id="telefonoVender" name="telefonoVender" readonly><br><br>
+        <label for="fotos">Fotos del teléfono:</label>
+        <input type="file" id="fotos" name="fotos[]" multiple><br><br>
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        // Obtener el parámetro "telefono" de la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const telefonoVender = urlParams.get('telefono');
+
+        // Rellenar el campo correspondiente en el formulario
+        document.getElementById('telefonoVender').value = telefonoVender;
+    </script>
+</body>
+</html>
